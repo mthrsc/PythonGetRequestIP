@@ -5,7 +5,7 @@ import os.path
 import requests
 from datetime import datetime
 
-filePath = '/share/CACHEDEV1_DATA/Public/GDrive/ip/ipFile.txt'
+filePath = '/path/ipFile.txt'
 
 req = requests.get('http://ipv4bot.whatismyipaddress.com')
 ip = req.text
@@ -13,7 +13,6 @@ now = datetime.now()
 dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
 
 final = ip + "\n\n" + "date: " + dt_string
-print(final)
 
 ipFile = open(filePath, "w+")
 ipFile.write(final)
